@@ -1,2 +1,2 @@
 #!/bin/bash
-sudo chwond betty hello
+chwond betty hello
