@@ -2,7 +2,9 @@
 # script that list all files in directory
 
 files="$(ls)"
+
 for f in $files;
-do 
-echo "$f" | cut -d "-" -f2
-done
+
+do
+	 echo "$f" | cut -d "-" -f2
+    done
