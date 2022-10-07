@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# Script that displays the clock
+
+t=1
+while [ "$t" -le 12 ]
+do
+    echo "Hour: $t"
+    (( t++ ))
+    m=1
+    while [ "$m" -le 59 ]
+    do
+	echo "$m"
+	(( m++ ))
+    done
+done
