@@ -2,7 +2,6 @@
 # Extracting in file
 
 FILE="/etc/passwd"
-while IFS=read -r line;
-do
+while IFS=read -r LINE; do 
 echo "$LINE" | cut -d ":" -f1,3,6
 done < "$FILE"
