@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 # This script displays times using while loop
 
-name="Best School"
-while [1..10]
+i=0
+while ((i < 10));
 do 
-echo $name
+echo "Best School";
+((i++));
 done
