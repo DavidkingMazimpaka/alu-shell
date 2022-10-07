@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Script that displays the clock
 
-t=1
+t=0
 while [ "$t" -le 12 ]
 do
     echo "Hour: $t"
