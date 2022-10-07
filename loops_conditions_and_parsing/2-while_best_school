@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# This script displays times using while loop
+
+while {1..10}
+do 
+echo "Best School"
+done
