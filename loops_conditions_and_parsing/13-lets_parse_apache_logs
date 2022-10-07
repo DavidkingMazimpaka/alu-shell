@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
 # This script that shows parse apache
 
-awk '{print $1,$9}' apache-access.log
+file="apache-access.log"
+awk '{print $1, $9}' $file
