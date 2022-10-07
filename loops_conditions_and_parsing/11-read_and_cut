@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-
 # Extracting in file
 
 FILE="/etc/passwd"
