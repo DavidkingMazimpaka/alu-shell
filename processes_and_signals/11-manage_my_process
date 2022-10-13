@@ -8,7 +8,6 @@ if [ -z "$Script" ]; then
 
 	  echo "Usage: manage_my_process {start|stop|restart}"
 
-	    exit
 fi
 
 if [ "$Script" == "start" ]; then
