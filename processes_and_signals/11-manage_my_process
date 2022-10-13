@@ -18,10 +18,10 @@ start() {
 
 stop() {
 	  trap '
-	      trap RETURN
-	          rm -f -- "${PIDFILE}"
-		    ' RETURN
-		      kill -- "$(< "${PIDFILE}")" 2> /dev/null
+	  trap RETURN
+	 rm -f -- "${PIDFILE}"
+	' RETURN
+	 kill -- "$(< "${PIDFILE}")" 2> /dev/null
 	      }
 
       restart() {
