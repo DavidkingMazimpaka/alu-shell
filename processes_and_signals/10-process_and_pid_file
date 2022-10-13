@@ -1,14 +1,19 @@
 #!/usr/bin/env bash
 # multi execution 
+# creating and deleting the file with pid
 
 echo $$ >> /var/run/myscript.pid;
+
 trap '
 echo  "I hate the kill command"
 rm -rf /var/run/myscript.pid
 exit' 15
+
 trap '
 echo "Y U no love me?!" ' 2
+
 trap 'rm -rf /var/run/myscrip.pid' 3
+
 while true 
 do
 echo "TO infinity and beyond"
