@@ -1,0 +1,47 @@
+#!/usr/bin/env bash                                                        
+
+# a script that manages my processes                                       
+
+# creating, displaying, stoping and deleting a file with a process         
+
+                                                                           
+
+PRGM='manage_my_process'                                                   
+
+PATH="${0%/*}/${PGRM}"                                                     
+
+PIDF="${PIDF:-/var/run/my_process.pid}"                                    
+
+                                                                           
+
+declare -A MESSAGES=(                                                                  
+
+['start']='started'                                                        
+
+['stop']='stopped'                                                        
+
+['restart']='restarted'                                                    
+
+)                                                                          
+start() {
+exec -- "${PATH}" &
+echo "$!" >| "${PIDF}"}
+                                                                            stop() {                                                                  trap '
+trap RETURN 
+rm -f -- "${PIDF}"
+' RETURN 
+kill -- "$(< "${PIDF}")" 2> /dev/null
+
+}
+restart() {
+stop
+start
+}
+
+if (($# == 1)) && [[-v "MESSAGES[$1]" ]]
+then
+"$1" && printf '%s %s\n' "${PRGM}" "${MESSAGES[$1]}"
+else
+printf 'Usage: %s {start|stop|restart}\n' "${PRGM}"
+exit 1
+fi
