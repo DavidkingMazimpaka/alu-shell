@@ -31,9 +31,9 @@ elif [ "$Script" == "stop" ]; then
 
 elif [ "$Script" == "restart" ]; then
 
-	"$0" stop > & /dev/null
+	"$0" stop >& /dev/null
 
-	"$0" start > & /dev/null
+	"$0" start >& /dev/null
 
 	echo "manage_my_process restarted"
 
