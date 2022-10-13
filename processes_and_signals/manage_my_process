@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# Indefinitely I am alive! file
+
+sleep() {
+	! read -rt "$1"
+} <> <(:)
+
+while true
+do
+	echo 'I am alive!'
+	sleep 2
+done >"${TMPDIR:-/tmp}/my_process"
