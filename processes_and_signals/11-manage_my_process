@@ -3,8 +3,7 @@
 # creating, displaying, stoping and deleting a file with a process         
 
                                                                            PRGM='manage_my_process'                                                   
-PATH="${0%/*}/${PGRM}"                                                     
-PIDF="${PIDF:-/var/run/my_process.pid}"                                    
+F_PATH="${0%/*}/${PGRM}"                                                   PIDF="${PIDF:-/var/run/my_process.pid}"                                    
 
 declare -A MESSAGES=(                                                                  
 ['start']='started'                                                        
@@ -14,7 +13,7 @@ declare -A MESSAGES=(
 )
 
 start() {
-exec -- "${PATH}" &
+exec -- "${F_PATH}" &
 echo "$!" >| "${PIDF}"
 
 }
