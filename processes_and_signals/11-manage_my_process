@@ -13,21 +13,28 @@ declare -A MESSAGES=(
 )
 
 start() {
+
 exec -- "${F_PATH}" &
 echo "$!" >| "${PIDF}"
 
 }
                    
 stop() {
-	trap '
-	trap RETURN 
-	rm -f --"${PIDF}"
-	' RETURN
-	kill -- "$(< "${PIDF}")" 2> /dev/null
+	
+trap '
+trap RETURN 
+rm -f --"${PIDF}"
+' RETURN
+kill -- "$(< "${PIDF}")" 2> /dev/null
+
 }
+
 restart() {
+
 stop
+
 start
+
 }
 
 if (( $# == 1 )) && [[ -v "MESSAGES[$1]" ]]
