@@ -30,7 +30,7 @@ stop
 start
 }
 
-if (($# == 1)) && [[-v "MESSAGES[$1]" ]]
+if (( $# == 1 )) && [[ -v "MESSAGES[$1]" ]]
 then
 "$1" && printf '%s %s\n' "${PRGM}" "${MESSAGES[$1]}"
 else
