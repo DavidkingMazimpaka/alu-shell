@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# terminating a process with using kill command
+
+pkill -f -o 4-to_infinity_and_beyond
